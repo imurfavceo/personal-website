@@ -1,6 +1,7 @@
 html {
   height: 100%;
   width: 100%;
+  font-family: 'Inter', sans-serif;
   }
 
 h1, p {
@@ -17,4 +18,23 @@ ul li {
 
 #reading_list li {
   margin-bottom: 10px;
+}
+
+.back_button {
+  background: #FAF8F1;
+  border-radius: 35px;
+  padding: 5px 25px;
+  border: 2px solid;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  font-size: 14px;
+} 
+
+.back_button:hover {
+  transform: scale(1.1);
+}
+
+#bio {
+  font-size: 18px;
+  line-height: 1.4;
 }
