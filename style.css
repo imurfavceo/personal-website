@@ -25,14 +25,10 @@ ul li {
   border-radius: 35px;
   padding: 5px 25px;
   border: 2px solid;
+  border-color: #222222;
   cursor: pointer;
-  transition: transform 0.3s ease;
   font-size: 14px;
 } 
-
-.back_button:hover {
-  transform: scale(1.1);
-}
 
 #bio {
   font-size: 18px;
