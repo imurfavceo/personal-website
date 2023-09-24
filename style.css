@@ -4,20 +4,16 @@ html {
   font-family: 'Inter', sans-serif;
   }
 
-h1, p {
-    text-align: center;
-  }
-
- body {
+body {
    background-color: #F5F5F5;
-  }
+ }
 
-ul li {
-  margin-bottom: 10px;
+a {
+  margin-bottom: 3px;
 }
 
-#reading_list li {
-  margin-bottom: 10px;
+li {
+  margin: 10px;
 }
 
 .back_button {
@@ -30,7 +26,9 @@ ul li {
   font-size: 14px;
 } 
 
-#bio {
-  font-size: 18px;
-  line-height: 1.4;
-}
+
+
+
+
+
+
