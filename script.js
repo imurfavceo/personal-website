@@ -4,12 +4,16 @@ document.addEventListener('DOMContentLoaded', function() {
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
             let content = document.getElementById('content-area').innerHTML;
+            //let opt = {
+              //  margin: 10,
+                // filename: 'ReadingList.pdf',
+                // image: { type: 'jpeg', quality: 0.98 },
+                // html2canvas: { scale: 2 },
+                // jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
             let opt = {
-                margin: 10,
-                filename: 'ReadingList.pdf',
-                image: { type: 'jpeg', quality: 0.98 },
-                html2canvas: { scale: 2 },
-                jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' }
+    margin: 10,
+    filename: 'ReadingList.pdf'
+};
             };
             html2pdf().from(content).set(opt).outputPdf().then(function(pdf) {
                 var blob = new Blob([pdf], { type: 'application/pdf' });
