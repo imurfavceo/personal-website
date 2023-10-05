@@ -3,7 +3,9 @@ document.addEventListener('DOMContentLoaded', function() {
     var downloadBtn = document.getElementById('download');
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
+  console.log('Button clicked');
             let content = document.getElementById('content-area').innerHTML;
+  console.log('Captured content:', content);
             let opt = {
                 margin: 10,
                 filename: 'ReadingList.pdf',
@@ -13,6 +15,7 @@ document.addEventListener('DOMContentLoaded', function() {
             };
             html2pdf().from(content).set(opt).outputPdf().then(function(pdf) {
                 var blob = new Blob([pdf], { type: 'application/pdf' });
+  console.log('PDF blob:', blob);
                 var link = document.createElement('a');
                 link.href = window.URL.createObjectURL(blob);
                 link.download = 'ReadingList.pdf';
