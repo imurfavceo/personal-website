@@ -3,7 +3,7 @@ document.addEventListener('DOMContentLoaded', function() {
     var downloadBtn = document.getElementById('download');
     if (downloadBtn) {
         downloadBtn.addEventListener('click', function() {
-            let content = document.documentElement.innerHTML;
+            let content = document.getElementById('content-area').innerHTML;
             let opt = {
                 margin: 10,
                 filename: 'ReadingList.pdf',
