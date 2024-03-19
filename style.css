@@ -26,6 +26,14 @@ li {
   font-size: 14px;
 } 
 
+.container {
+  text-align: center; /* Align text in the center */
+}
+
+.container a {
+  display: block; /* Make links block elements */
+  margin-bottom: 10px; /* Add space between links */
+}
 
 
 
