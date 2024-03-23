@@ -8,34 +8,40 @@ body {
    background-color: #F5F5F5;
  }
 
-a {
-  margin-bottom: 3px;
-}
-
 li {
-  margin: 10px;
-}
-
-.back_button {
-  background: #FAF8F1;
-  border-radius: 35px;
-  padding: 5px 25px;
-  border: 2px solid;
-  border-color: #222222;
-  cursor: pointer;
-  font-size: 14px;
-} 
-
-.container {
-  text-align: center; /* Align text in the center */
-}
-
-.container a {
-  display: block; /* Make links block elements */
-  margin-bottom: 10px; /* Add space between links */
+  margin-bottom: 7.5px;
 }
 
 
+.accelerators {
+  text-align: center; 
+  padding-bottom: 50px;
+  padding-top: 25px;
+}
 
+.accelerators a {
+  margin-top: 25px;
+  margin-bottom: -7px;
+  display: block;
+}
 
+.homepage {
+  text-align: center; 
+}
+
+.homepage a {
+  margin-bottom: -7px;
+  display: block;
+}
+
+#intro {
+    padding-right: 300px;
+    line-height: 1.5;
+  }
+
+.homebutton {
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 50px;
+}
 
