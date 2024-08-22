@@ -29,6 +29,16 @@ li {
   text-align: center; 
 }
 
+.resources {
+  text-align: center; 
+}
+
+.resources a {
+  margin-top: 25px;
+  margin-bottom: -7px;
+  display: block;
+}
+
 .homepage a {
   margin-bottom: 10px;
   display: block;
