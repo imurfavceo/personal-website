@@ -1,3 +1,4 @@
+/* Base styles */
 html {
   height: 100%;
   width: 100%;
@@ -7,63 +8,33 @@ html {
 }
 
 body {
-   background-color: #F5F5F5;
-   color: #333333;
- }
-
-li {
-  margin-bottom: 7.5px;
+  background-color: #F5F5F5;
+  color: #333333;
 }
 
-
-.accelerators {
-  text-align: center; 
-  padding-bottom: 50px;
-  padding-top: 25px;
+/* Typography */
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
-.accelerators a {
-  margin-top: 25px;
-  margin-bottom: -7px;
-  display: block;
+h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: left;
 }
 
-.homepage {
-  text-align: center; 
-}
-
-.resources {
-  text-align: center; 
-}
-
-.resources a {
-  margin-top: 25px;
-  margin-bottom: -7px;
-  display: block;
-}
-
-.homepage a {
-  margin-bottom: 10px;
-  display: block;
-}
-
-#intro {
-    padding-right: 300px;
-    line-height: 1.5;
-  }
-
-.homebutton {
-  text-align: center;
-  margin-top: 50px;
-  padding-bottom: 50px;
-}
-
+/* Layout */
 .container {
   max-width: 42rem;
   margin: 0 auto;
   padding: 2rem 0;
 }
 
+/* Card styles */
 .card {
   margin-bottom: 2rem;
 }
@@ -79,20 +50,17 @@ li {
   box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
-h1 {
-  font-size: 1.5rem;
-  font-weight: 700;
-  margin-bottom: 1rem;
-  text-align: left;
+/* List styles */
+li {
+  margin-bottom: 7.5px;
 }
 
-h2 {
-  font-size: 1.25rem;
-  font-weight: 600;
-  margin-bottom: 1rem;
-  text-align: left;
+.list-disc {
+  list-style-type: disc;
+  padding-left: 1.25rem;
 }
 
+/* Text utilities */
 .text-gray-600 {
   color: #4b5563;
   text-align: left;
@@ -102,21 +70,50 @@ h2 {
   color: #2563eb;
 }
 
+/* Link styles */
 .hover\:underline:hover {
   text-decoration: underline;
 }
 
-.list-disc {
-  list-style-type: disc;
-  padding-left: 1.25rem;
+/* Section-specific styles */
+.accelerators {
+  text-align: center;
+  padding-bottom: 50px;
+  padding-top: 25px;
 }
 
-.space-y-2 > * + * {
-  margin-top: 0.5rem;
+.accelerators a {
+  margin-top: 25px;
+  margin-bottom: -7px;
+  display: block;
 }
 
-.text-left {
-  text-align: left;
+.homepage {
+  text-align: center;
 }
 
+.homepage a {
+  margin-bottom: 10px;
+  display: block;
+}
 
+.resources {
+  text-align: center;
+}
+
+.resources a {
+  margin-top: 25px;
+  margin-bottom: -7px;
+  display: block;
+}
+
+#intro {
+  padding-right: 300px;
+  line-height: 1.5;
+}
+
+.homebutton {
+  text-align: center;
+  margin-top: 50px;
+  padding-bottom: 50px;
+} 
