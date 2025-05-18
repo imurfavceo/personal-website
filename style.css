@@ -2,10 +2,13 @@ html {
   height: 100%;
   width: 100%;
   font-family: 'Inter', sans-serif;
-  }
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
 
 body {
    background-color: #F5F5F5;
+   color: #333333;
  }
 
 li {
@@ -53,6 +56,67 @@ li {
   text-align: center;
   margin-top: 50px;
   padding-bottom: 50px;
+}
+
+.container {
+  max-width: 42rem;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.card {
+  margin-bottom: 2rem;
+}
+
+.card:last-child {
+  margin-bottom: 0;
+}
+
+.card-content {
+  padding: 1.5rem;
+  background-color: white;
+  border-radius: 0.5rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+h2 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  text-align: left;
+}
+
+.text-gray-600 {
+  color: #4b5563;
+  text-align: left;
+}
+
+.text-blue-600 {
+  color: #2563eb;
+}
+
+.hover\:underline:hover {
+  text-decoration: underline;
+}
+
+.list-disc {
+  list-style-type: disc;
+  padding-left: 1.25rem;
+}
+
+.space-y-2 > * + * {
+  margin-top: 0.5rem;
+}
+
+.text-left {
+  text-align: left;
 }
 
 
