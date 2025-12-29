@@ -1,74 +1,59 @@
-<!DOCTYPE html>
-<html>
-
+<!doctype html>
+<html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width">
-  <title>imurfavceo</title>
-  <link href="style.css" rel="stylesheet" type="text/css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2 family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link href="https://unpkg.com/@shadcn/ui@1.2.3/dist/shadcn-ui.css" rel="stylesheet">
-  <script src="https://unpkg.com/@shadcn/ui@1.2.3/dist/shadcn-ui.js"></script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Home · Gleb Braverman</title>
+  <meta name="description" content="Gleb’s personal site: collections and principles." />
+  <link rel="stylesheet" href="/assets/style.css" />
 </head>
-
 <body>
-  <div class="max-w-xl mx-auto my-8 space-y-6 px-4">
-    <div class="card">
-      <div class="card-content">
-        <h1 class="text-2xl font-semibold text-center">Gleb Braverman</h1>
-        <p class="text-gray-600">
-          I work at <a href="https://hackerpulse.io" class="text-blue-600 underline">HackerPulse</a>.
-        </p>
-      </div>
-    </div>
+  <header>
+    <div class="wrap">
+      <button class="menu-btn" type="button" data-menu-button aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+      </button>
+      <nav data-nav>
+        <a href="/" aria-current="page">Home</a>
+        <a href="/writing/">Writing</a>
+        <a href="/collections/">Collections</a>
+        <a href="/principles/">Principles</a>
+        <a href="/about/">About</a>
+      </nav>
 
-    <div class="card">
-      <div class="card-content">
-        <h2 class="text-xl font-semibold">Things I am excited about</h2>
-        <ul class="list-disc pl-4 space-y-2">
-          <li>
-            <b>New Ideas.</b> Sometimes I do 
-            <a href="moon-shots.html" class="text-blue-600 underline">angel checks</a> 
-            in ideas I find exciting and help founders with product thinking, growth tactics and further capital raise.
-          </li>
-          <li>
-            <b>Ironman.</b> I started training for a 70.3 race in 2023, first event is later this year!
-          </li>
-          <li>
-            <b>Writing.</b> I do 
-            <a href="https://changelog-1.ghost.io/" class="text-blue-600 underline">occasional writing</a> 
-            on topics related to startups and fundraising.
-          </li>
-        </ul>
-      </div>
-    </div>
 
-    <div class="card">
-      <div class="card-content">
-        <h2 class="text-xl font-semibold">Reach out</h2>
-        <ul class="list-disc pl-4 space-y-2">
-          <li>
-            <a href="https://twitter.com/imurfavceo" class="text-blue-600 underline">Twitter</a>
-          </li>
-          <li>
-            <a href="https://linkedin.com/in/glebbraverman" class="text-blue-600 underline">LinkedIn</a>
-          </li>
-        </ul>
-      </div>
     </div>
+  </header>
 
-    <div class="card">
-      <div class="card-content text-center">
-        <h2 class="text-xl font-semibold mb-4">Newsletter</h2>
-        <div style="max-width: 480px; margin: 0 auto;">
-          <iframe src="https://imurfavceo.substack.com/embed" width="100%" height="150" style="border:1px solid #EEE; background:white;" frameborder="0" scrolling="no"></iframe>
-        </div>
-      </div>
+  <div class="wrap">
+    <main>
+      <h1>Hi, I am Gleb!</h1>
+<p class="kicker">I work at <a href="https://hackerpulse.com" target="_blank" rel="noopener">HackerPulse</a>, explore new ideas, angel invest, and help founders think through product, growth, and fundraising. Outside of work I train for Ironman 70.3 (2026).</p>
+
+<hr />
+
+<div class="grid">
+  <div class="card">
+    <a href="/collections/"><strong>Collections</strong></a>
+    <div class="small">Books, places, links, objects, wishlist.</div>
+  </div>
+  <div class="card">
+    <a href="/principles/"><strong>Principles</strong></a>
+    <div class="small">Evolving beliefs and rules of thumb.</div>
+  </div>
+  <div class="card">
+    <a href="/writing/"><strong>Writing</strong></a>
+    <div class="small">Essays (deliberate) and notes (exploratory).</div>
+  </div>
+</div>
+
+    </main>
+
+    <div class="footer">
+      <div class="small">© 2025 Gleb Braverman</div>
     </div>
   </div>
-  <script src="script.js"></script>
-</body>
 
+  <script src="/assets/site.js" defer></script>
+</body>
 </html>

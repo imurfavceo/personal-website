@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Writing · Gleb</title>
+  <meta name="description" content="Writing: essays and notes." />
+  <link rel="stylesheet" href="/assets/style.css" />
+</head>
+<body>
+  <header>
+    <div class="wrap">
+      <button class="menu-btn" type="button" data-menu-button aria-expanded="false" aria-label="Toggle navigation">
+        Menu
+      </button>
+      <nav data-nav>
+        <a href="/">Home</a>
+        <a href="/writing/" aria-current="page">Writing</a>
+        <a href="/collections/">Collections</a>
+        <a href="/principles/">Principles</a>
+        <a href="/about/">About</a>
+      </nav>
+    </div>
+  </header>
+
+  <div class="wrap">
+    <main>
+      <h1>Writing</h1>
+      <p class="kicker">Essays are deliberate thinking. Notes are rough ideas, observations and experiments.</p>
+
+      <div class="writing-toggle" role="tablist" aria-label="Writing sections" data-writing-toggle>
+        <button type="button" role="tab" data-target="essays" aria-selected="true" class="is-active">Essays</button>
+        <button type="button" role="tab" data-target="notes" aria-selected="false">Notes</button>
+      </div>
+
+      <section class="writing-panel" data-writing-panel="essays">
+        <div class="writing-list">
+          <div class="writing-preview">
+            <div class="preview-title">Deliberate Practice in Small Loops</div>
+            <p class="preview-excerpt">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Praesent facilisis sapien vitae justo pulvinar, vitae ultrices mauris fermentum...</p>
+            <div class="preview-meta">
+              <a class="button-link preview-readmore" href="/writing/essays/deliberate-practice/" data-writing-preview-link>Read more</a>
+              <span class="small meta-time">~4 min read</span>
+            </div>
+          </div>
+          <div class="writing-preview">
+            <div class="preview-title">Compounding from Tiny Decisions</div>
+            <p class="preview-excerpt">Cras tempor augue vitae justo bibendum, non commodo libero feugiat. Suspendisse potenti. Etiam suscipit, eros id volutpat...</p>
+            <div class="preview-meta">
+              <a class="button-link preview-readmore" href="/writing/essays/compounding-decisions/" data-writing-preview-link>Read more</a>
+              <span class="small meta-time">~3 min read</span>
+            </div>
+          </div>
+          <div class="writing-preview">
+            <div class="preview-title">Building Focus on Demand</div>
+            <p class="preview-excerpt">Integer vel mauris sit amet lacus consequat scelerisque. Morbi volutpat, nisl at tempor egestas, odio erat porttitor sem...</p>
+            <div class="preview-meta">
+              <a class="button-link preview-readmore" href="/writing/essays/building-focus/" data-writing-preview-link>Read more</a>
+              <span class="small meta-time">~5 min read</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="writing-panel" data-writing-panel="notes" hidden>
+        <div class="writing-list">
+          <div class="writing-preview">
+            <div class="preview-title">Idea Log — Week 32</div>
+            <p class="preview-excerpt">Nam quis neque vel ligula egestas placerat. Vestibulum luctus, nunc at varius feugiat, augue nunc pellentesque elit...</p>
+            <div class="preview-meta">
+              <a class="button-link preview-readmore" href="/writing/notes/idea-log/" data-writing-preview-link>Read more</a>
+              <span class="small meta-time">~2 min read</span>
+            </div>
+          </div>
+          <div class="writing-preview">
+            <div class="preview-title">Half-Baked Experiment</div>
+            <p class="preview-excerpt">Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam...</p>
+            <div class="preview-meta">
+              <a class="button-link preview-readmore" href="/writing/notes/half-baked-experiment/" data-writing-preview-link>Read more</a>
+              <span class="small meta-time">~1 min read</span>
+            </div>
+          </div>
+          <div class="writing-preview">
+            <div class="preview-title">Quick Thoughts on Momentum</div>
+            <p class="preview-excerpt">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur...</p>
+            <div class="preview-meta">
+              <a class="button-link preview-readmore" href="/writing/notes/quick-thoughts/" data-writing-preview-link>Read more</a>
+              <span class="small meta-time">~1 min read</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+    </main>
+    <hr />
+    <div class="footer no-border">
+      <div class="small">© 2025 Gleb Braverman</div>
+    </div>
+  </div>
+
+  <script src="/assets/site.js" defer></script>
+</body>
+</html>
