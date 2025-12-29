@@ -7,6 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
   setupWritingToggle();
   setupCardLinks();
   setupWritingScrollRestore();
+  setupPrinciplesUpdated();
 });
 
 function setupMenuToggle() {
@@ -224,4 +225,56 @@ function setupWritingScrollRestore() {
       sessionStorage.removeItem("writing-scroll");
     }
   }
+}
+
+function setupPrinciplesUpdated() {
+  const list = document.querySelector("[data-principles-list]");
+  const target = document.querySelector("[data-principles-updated]");
+  if (!list || !target) return;
+
+  const STORAGE_KEY_HASH = "principles-hash";
+  const STORAGE_KEY_DATE = "principles-updated";
+
+  const text = list.innerText.trim();
+  const hash = hashString(text);
+
+  const savedHash = localStorage.getItem(STORAGE_KEY_HASH);
+  let savedDate = localStorage.getItem(STORAGE_KEY_DATE);
+
+  if (!savedHash || savedHash !== hash) {
+    savedDate = formatMonthYear(new Date());
+    localStorage.setItem(STORAGE_KEY_HASH, hash);
+    localStorage.setItem(STORAGE_KEY_DATE, savedDate);
+  }
+
+  if (savedDate) {
+    target.textContent = savedDate;
+  }
+}
+
+function hashString(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = (hash << 5) - hash + str.charCodeAt(i);
+    hash |= 0;
+  }
+  return String(hash);
+}
+
+function formatMonthYear(date) {
+  const months = [
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December",
+  ];
+  return `${months[date.getMonth()]} ${date.getFullYear()}`;
 }
