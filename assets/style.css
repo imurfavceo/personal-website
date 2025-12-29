@@ -223,6 +223,64 @@ nav a[aria-current="page"]{ color: var(--fg); }
 .preview-readmore{
   margin-top: 4px;
 }
+
+.back-link-top{
+  display: flex;
+  justify-content: flex-end;
+  margin-bottom: 8px;
+}
+.back-link-top a{
+  color: var(--muted);
+  text-decoration: none;
+  font-size: 14px;
+}
+.back-link-top a:hover{
+  text-decoration: underline;
+  color: var(--fg);
+}
+
+.floating-back{
+  display: none;
+  align-items: center;
+  gap: 8px;
+  margin-top: 18px;
+  margin-bottom: 16px;
+  align-self: flex-end;
+  position: relative;
+  right: 0;
+  bottom: 0;
+  padding: 12px 16px;
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  background: var(--surface);
+  color: var(--fg);
+  text-decoration: none;
+  font-size: 15px;
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+  z-index: 30;
+}
+.floating-back:hover{
+  border-color: var(--accent);
+  color: var(--fg);
+  background: color-mix(in srgb, var(--surface) 88%, var(--accent-soft) 12%);
+}
+
+@media (max-width: 720px){
+  .floating-back{
+    display: inline-flex;
+  }
+}
+@media (max-width: 720px){
+  .preview-meta{
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+  }
+  .button-link.preview-readmore{
+    width: 100%;
+    justify-content: center;
+  }
+}
 .button-link:hover{
   border-color: var(--accent);
   color: var(--fg);
@@ -242,7 +300,7 @@ nav a[aria-current="page"]{ color: var(--fg); }
 .theme-switch{
   display:flex;
   align-items:center;
-  gap: 8px;
+  gap: 10px;
   justify-content: flex-end;
   position: relative;
 }
@@ -250,13 +308,15 @@ nav a[aria-current="page"]{ color: var(--fg); }
   border: 1px solid var(--border);
   background: transparent;
   color: var(--fg);
-  padding: 8px 10px;
-  border-radius: var(--radius);
+  padding: 10px 12px;
+  border-radius: 14px;
   font: inherit;
   cursor: pointer;
   display: inline-flex;
   align-items: center;
   justify-content: center;
+  min-width: 44px;
+  min-height: 44px;
 }
 .theme-options{
   display: inline-flex;
@@ -280,10 +340,12 @@ nav a[aria-current="page"]{ color: var(--fg); }
   border: 1px solid var(--border);
   background: transparent;
   color: var(--fg);
-  padding: 7px 10px;
-  border-radius: var(--radius);
+  padding: 9px 12px;
+  border-radius: 12px;
   font: inherit;
   cursor: pointer;
+  min-width: 44px;
+  min-height: 44px;
 }
 
 @media (max-width: 720px){
