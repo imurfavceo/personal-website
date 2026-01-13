@@ -108,6 +108,7 @@ function applyTheme(mode) {
       ? (window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light")
       : mode;
   root.setAttribute("data-theme", resolved);
+  root.style.colorScheme = resolved;
 }
 
 function updateTriggerLabel(trigger, mode) {
