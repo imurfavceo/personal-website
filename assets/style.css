@@ -377,9 +377,15 @@ h1{
   line-height: 1.25;
   margin: 0 0 14px;
   letter-spacing: -0.01em;
+  padding-bottom: 12px;
+  border-bottom: 1px solid var(--border);
 }
 h2{
-  font-size: 18px;
+  font-size: 22px;
+  margin: 32px 0 12px;
+}
+h3{
+  font-size: 17px;
   margin: 24px 0 8px;
 }
 p{ margin: 0 0 14px; }
