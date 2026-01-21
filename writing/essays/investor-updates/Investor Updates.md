@@ -38,13 +38,13 @@ Challenging
 ### How you can help
 - We hire for a designer!
 - Share our recent social media posts with your network
-### Best way to desribe Acme Inc. right now:
+### Best way to describe Acme Inc. right now:
 Acme Inc. is making an AI powered light saber helping everyone make the world a better place.
 
 
 
 ## Close 
 
-Being consistent and clear in you communication with investors is what truly matters. Showing up and doing the work is a very big part of success.
+Being consistent and clear in your communication with investors is what truly matters. Showing up and doing the work is a very big part of success.
 
 
