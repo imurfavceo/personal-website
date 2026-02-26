@@ -6,8 +6,6 @@ document.addEventListener("DOMContentLoaded", () => {
   setupThemeSwitcher();
   setupWritingToggle();
   setupCardLinks();
-  setupWritingScrollRestore();
-  setupPrinciplesUpdated();
 });
 
 function setupMenuToggle() {
@@ -164,9 +162,7 @@ function setupWritingToggle() {
     });
   });
 
-  const stored = sessionStorage.getItem("writing-active-panel");
-  const hasStored = buttons.some((btn) => btn.dataset.target === stored);
-  activate(hasStored ? stored : "essays");
+  activate("essays");
 }
 
 function setupCardLinks() {
@@ -180,7 +176,6 @@ function setupCardLinks() {
     card.setAttribute("tabindex", "0");
 
     const go = (evt) => {
-      // Avoid hijacking clicks on actual links inside the card
       if (evt.target.closest("a")) return;
       window.location.href = href;
     };
@@ -193,89 +188,4 @@ function setupCardLinks() {
       }
     });
   });
-}
-
-function setupWritingScrollRestore() {
-  const previewLinks = document.querySelectorAll("[data-writing-preview-link]");
-  if (previewLinks.length) {
-    previewLinks.forEach((link) => {
-      link.addEventListener("click", () => {
-        sessionStorage.setItem("writing-scroll", String(window.scrollY || 0));
-        const activeButton = document.querySelector("[data-writing-toggle] .is-active");
-        const panel = activeButton?.dataset.target || "essays";
-        sessionStorage.setItem("writing-active-panel", panel);
-      });
-    });
-  }
-
-  const path = window.location.pathname.replace(/\/+$/, "/");
-  if (path === "/writing/") {
-    const savedPanel = sessionStorage.getItem("writing-active-panel");
-    if (savedPanel) {
-      const button = document.querySelector(`[data-writing-toggle] [data-target="${savedPanel}"]`);
-      if (button && !button.classList.contains("is-active")) {
-        button.click();
-      }
-    }
-    const stored = sessionStorage.getItem("writing-scroll");
-    if (stored) {
-      const y = Number(stored);
-      requestAnimationFrame(() => {
-        window.scrollTo({ top: isNaN(y) ? 0 : y, behavior: "auto" });
-      });
-      sessionStorage.removeItem("writing-scroll");
-    }
-  }
-}
-
-function setupPrinciplesUpdated() {
-  const list = document.querySelector("[data-principles-list]");
-  const target = document.querySelector("[data-principles-updated]");
-  if (!list || !target) return;
-
-  const STORAGE_KEY_HASH = "principles-hash";
-  const STORAGE_KEY_DATE = "principles-updated";
-
-  const text = list.innerText.trim();
-  const hash = hashString(text);
-
-  const savedHash = localStorage.getItem(STORAGE_KEY_HASH);
-  let savedDate = localStorage.getItem(STORAGE_KEY_DATE);
-
-  if (!savedHash || savedHash !== hash) {
-    savedDate = formatMonthYear(new Date());
-    localStorage.setItem(STORAGE_KEY_HASH, hash);
-    localStorage.setItem(STORAGE_KEY_DATE, savedDate);
-  }
-
-  if (savedDate) {
-    target.textContent = savedDate;
-  }
-}
-
-function hashString(str) {
-  let hash = 0;
-  for (let i = 0; i < str.length; i++) {
-    hash = (hash << 5) - hash + str.charCodeAt(i);
-    hash |= 0;
-  }
-  return String(hash);
-}
-
-function formatMonthYear(date) {
-  const months = [
-    "January",
-    "February",
-    "March",
-    "April",
-    "May",
-    "June",
-    "July",
-    "August",
-    "September",
-    "October",
-    "November",
-    "December",
-  ];
-  return `${months[date.getMonth()]} ${date.getFullYear()}`;
 }
