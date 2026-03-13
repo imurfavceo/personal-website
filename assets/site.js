@@ -4,7 +4,6 @@ const MODES = ["light", "dark", "system"];
 document.addEventListener("DOMContentLoaded", () => {
   setupMenuToggle();
   setupThemeSwitcher();
-  setupWritingToggle();
   setupCardLinks();
 });
 
@@ -129,40 +128,6 @@ function updateOptionVisibility(optionButtons, activeMode) {
       btn.setAttribute("tabindex", "0");
     }
   });
-}
-
-function setupWritingToggle() {
-  const toggle = document.querySelector("[data-writing-toggle]");
-  const panels = document.querySelectorAll("[data-writing-panel]");
-  if (!toggle || panels.length === 0) return;
-
-  const buttons = Array.from(toggle.querySelectorAll("[data-target]"));
-  if (buttons.length === 0) return;
-
-  function activate(targetName) {
-    buttons.forEach((btn) => {
-      const isActive = btn.dataset.target === targetName;
-      btn.classList.toggle("is-active", isActive);
-      btn.setAttribute("aria-selected", String(isActive));
-      btn.setAttribute("tabindex", isActive ? "0" : "-1");
-    });
-    panels.forEach((panel) => {
-      const isMatch = panel.dataset.writingPanel === targetName;
-      if (isMatch) {
-        panel.removeAttribute("hidden");
-      } else {
-        panel.setAttribute("hidden", "");
-      }
-    });
-  }
-
-  buttons.forEach((btn) => {
-    btn.addEventListener("click", () => {
-      activate(btn.dataset.target || "essays");
-    });
-  });
-
-  activate("essays");
 }
 
 function setupCardLinks() {
