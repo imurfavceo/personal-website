@@ -8,6 +8,9 @@
   --accent-hover:#6d28d9;
   --accent-soft:#ede9fe;
   --border:#e5e7eb;
+  --live:#16a34a;     --live-soft:#dcfce7;
+  --building:#d97706; --building-soft:#fef3c7;
+  --dead:#dc2626;     --dead-soft:#fee2e2;
   --max: 760px;
   --pad: 18px;
   --radius: 10px;
@@ -23,6 +26,9 @@
   --accent-hover:#e3b545;
   --accent-soft:#2a2415;
   --border:#1f242b;
+  --live:#34d399;     --live-soft:#10241a;
+  --building:#fbbf24; --building-soft:#2a2310;
+  --dead:#f87171;     --dead-soft:#2a1416;
 }
 
 *{ box-sizing:border-box; }
@@ -263,6 +269,125 @@ hr{
   margin: 0;
   line-height: 1.6;
   border-left: 2px solid var(--accent);
+}
+
+/* Projects list — status pills + lessons */
+.proj-group{
+  font-size: 21px;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  color: var(--fg);
+  margin: 44px 0 14px;
+}
+.proj-group:first-of-type{ margin-top: 28px; }
+
+.projects{
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: grid;
+  gap: 16px;
+}
+.projects:last-of-type{ margin-bottom: 28px; }
+.projects li{
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 18px;
+}
+.project-body{ flex: 1; min-width: 0; max-width: 56ch; }
+.project-meta{
+  flex: none;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 8px;
+}
+
+.project-id{
+  display: inline-flex;
+  align-items: baseline;
+  gap: 10px;
+  flex-wrap: wrap;
+  min-width: 0;
+}
+.project-name{
+  font-weight: 600;
+  color: var(--fg);
+  text-decoration: none;
+}
+a.project-name:hover{ text-decoration: underline; }
+.project-url{
+  font-size: 13px;
+  color: var(--muted);
+  text-decoration: none;
+}
+.project-url::after{ content: "\2197"; margin-left: 2px; }
+.project-url:hover{ color: var(--accent); text-decoration: underline; }
+
+.status{
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  padding: 4px 10px;
+  border-radius: 999px;
+  white-space: nowrap;
+  flex: none;
+}
+.status .dot{
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex: none;
+}
+.status--live{ color: var(--live); background: var(--live-soft); }
+.status--live .dot{ background: var(--live); }
+.status--building{ color: var(--building); background: var(--building-soft); }
+.status--building .dot{ background: var(--building); }
+.status--dead{ color: var(--dead); background: var(--dead-soft); }
+.status--dead .dot{ background: var(--dead); }
+
+.project-desc{
+  color: var(--muted);
+  margin: 3px 0 0;
+}
+.metric{
+  display: inline-block;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--accent);
+  background: transparent;
+  border: 1px solid color-mix(in srgb, var(--accent) 45%, transparent);
+  padding: 1px 7px;
+  border-radius: 6px;
+}
+.lesson{
+  font-size: 13px;
+  font-style: italic;
+  color: var(--muted);
+  margin: 4px 0 0;
+}
+
+@media (max-width: 720px){
+  .projects li{
+    flex-direction: column;
+    align-items: stretch;
+    gap: 8px;
+  }
+  .project-meta{ order: -1; justify-content: flex-start; }
+  .project-body{ max-width: none; }
+}
+
+@media (prefers-reduced-motion: no-preference){
+  .status--live .dot{ animation: status-pulse 2.4s ease-in-out infinite; }
+  @keyframes status-pulse{
+    0%, 100%{ box-shadow: 0 0 0 0 color-mix(in srgb, var(--live) 55%, transparent); }
+    50%{ box-shadow: 0 0 0 4px color-mix(in srgb, var(--live) 0%, transparent); }
+  }
 }
 
 .grid{
