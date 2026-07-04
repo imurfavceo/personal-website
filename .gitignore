@@ -1,2 +1,5 @@
 .DS_Store
 *.DS_Store
+
+# Cloudflare Wrangler local cache / build output
+.wrangler/
