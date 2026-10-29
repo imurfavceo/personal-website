@@ -1,4 +1,5 @@
 (function () {
+  document.documentElement.classList.add("js");
   const THEME_KEY = "theme-preference";
   const MODES = ["light", "dark", "system"];
 

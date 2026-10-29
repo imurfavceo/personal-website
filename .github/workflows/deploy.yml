@@ -22,10 +22,10 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Stage site (exclude VCS / dotfiles from the upload)
+      - name: Stage site (exclude VCS, internal docs, and tests)
         run: |
           mkdir -p _site
-          rsync -a --exclude='.*' --exclude='_site' ./ _site/
+          rsync -a --exclude='.*' --exclude='_site' --exclude='CLAUDE.md' --exclude='AGENTS.md' --exclude='docs/' --exclude='tests/' ./ _site/
 
       - name: Deploy to Cloudflare Pages
         uses: cloudflare/wrangler-action@v3

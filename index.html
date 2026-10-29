@@ -4,43 +4,52 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Home · Gleb Braverman</title>
-  <meta name="description" content="Gleb’s personal site: collections and principles." />
+  <meta name="description" content="Gleb Braverman: projects, angel investments, books, and writing." />
+  <link rel="canonical" href="https://imurfavceo.com/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Gleb Braverman" />
+  <meta property="og:title" content="Home · Gleb Braverman" />
+  <meta property="og:description" content="Gleb Braverman: projects, angel investments, books, and writing." />
+  <meta property="og:url" content="https://imurfavceo.com/" />
+  <meta name="twitter:card" content="summary" />
   <script src="/assets/theme-init.js"></script>
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="icon" href="/assets/favicon.svg" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <div class="wrap">
-      <button class="menu-btn" type="button" data-menu-button aria-expanded="false" aria-label="Toggle navigation">
+      <button class="menu-btn" type="button" data-menu-button aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
         Menu
       </button>
-      <nav data-nav>
+      <nav id="site-nav" data-nav aria-label="Main navigation">
         <a href="/" aria-current="page">Home</a>
         <a href="/projects/">Projects</a>
         <a href="/collections/">Collections</a>
         <a href="/about/">About</a>
-        <a href="https://imurfavceo.substack.com/subscribe" target="_blank" rel="noopener">Blog</a>
+        <a href="https://imurfavceo.substack.com/archive" target="_blank" rel="noopener">Blog</a>
       </nav>
     </div>
   </header>
 
   <div class="wrap">
-    <main>
+    <main id="main" tabindex="-1">
       <h1>Hi, I am Gleb!</h1>
-<p class="kicker">I work at <a href="https://hackerpulse.com" target="_blank" rel="noopener">HackerPulse</a>, explore new ideas, <a href="/investments/">angel invest</a>, and help founders think through product, growth, and fundraising as a member of Antler Operator network. Outside of work I train for Ironman 70.3 (2026).</p>
+<p class="kicker">I work on <a href="https://hackerpulse.com" target="_blank" rel="noopener">HackerPulse</a> and <a href="https://imladrislabs.dev" target="_blank" rel="noopener">Imladris Labs</a>, explore new ideas, and <a href="/investments/">angel invest</a>.</p>
+<p class="kicker">As part of Antler's operator network, I help founders with product, growth, and fundraising. Outside work, I train for Ironman 70.3.</p>
 
 <hr />
 
 <div class="grid">
-  <div class="card">
-    <a href="/projects/"><strong>Projects</strong></a>
-    <div class="small">Side projects I work on with friends or solo.</div>
-  </div>
-  <div class="card">
-    <a href="/collections/"><strong>Collections</strong></a>
-    <div class="small">Books, places, links, objects I find interesting.</div>
-  </div>
+  <a class="card" href="/projects/">
+    <strong>Projects</strong>
+    <div class="small">Projects I work on with friends or solo.</div>
+  </a>
+  <a class="card" href="/collections/">
+    <strong>Collections</strong>
+    <div class="small">Books I return to and links worth sharing.</div>
+  </a>
 </div>
 
     </main>
