@@ -57,3 +57,5 @@ Factual notes for anyone (human or agent) touching UI. Every line is grounded in
 - Imladris Labs appears on Home and under Active projects, linking to `https://imladrislabs.dev`.
 - CSS hides mobile navigation only after `theme-init.js` adds the `js` root class; navigation stays available without JavaScript.
 - `assets/site.js` catches storage failures and changes theme-menu visibility synchronously; regression tests cover those edge cases.
+
+- CSS and script references carry a `?v=` SHA-256 content hash (first 12 hex digits). Update those references on every HTML page whenever any referenced asset changes; the regression test checks the hashes to prevent mixed cached and current releases.
