@@ -16,3 +16,4 @@ Process rules live in `Desktop/Projects/AGENTS.md` (the folder above) and load a
 - Light-theme status text must maintain at least 4.5:1 contrast against its badge background.
 - Remove confirmed broken project links rather than sending visitors to dead preview deployments.
 - Version CSS and JavaScript URLs with their content hashes on every page; stale cached assets can break newly deployed HTML. Update all references whenever asset contents change and run the regression test.
+- The homepage features Embodal as the only named company and current main focus; other companies belong on Projects.

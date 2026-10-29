@@ -54,7 +54,7 @@ Factual notes for anyone (human or agent) touching UI. Every line is grounded in
 ## Refresh verification
 
 - Blog links use `https://imurfavceo.substack.com/archive` to show articles directly.
-- Imladris Labs appears on Home and under Active projects, linking to `https://imladrislabs.dev`.
+- Embodal is the only named company on Home, linking to `https://embodal.com`; HackerPulse, Imladris Labs, and the other companies remain on Projects.
 - CSS hides mobile navigation only after `theme-init.js` adds the `js` root class; navigation stays available without JavaScript.
 - `assets/site.js` catches storage failures and changes theme-menu visibility synchronously; regression tests cover those edge cases.
 
