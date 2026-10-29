@@ -4,7 +4,6 @@ const MODES = ["light", "dark", "system"];
 document.addEventListener("DOMContentLoaded", () => {
   setupMenuToggle();
   setupThemeSwitcher();
-  setupCardLinks();
 });
 
 function setupMenuToggle() {
@@ -16,6 +15,16 @@ function setupMenuToggle() {
     const isOpen = nav.classList.toggle("open");
     btn.setAttribute("aria-expanded", String(isOpen));
   });
+
+  const closeOnEscape = (evt) => {
+    if (evt.key === "Escape") {
+      nav.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
+      btn.focus();
+    }
+  };
+  nav.addEventListener("keydown", closeOnEscape);
+  btn.addEventListener("keydown", closeOnEscape);
 }
 
 function setupThemeSwitcher() {
@@ -25,10 +34,10 @@ function setupThemeSwitcher() {
   const switcher = document.createElement("div");
   switcher.className = "theme-switch";
   switcher.innerHTML = `
-    <button type="button" class="theme-main" data-theme-trigger aria-expanded="false" aria-label="Toggle theme menu" title="Theme">
+    <button type="button" class="theme-main" data-theme-trigger aria-controls="theme-options" aria-expanded="false" aria-label="Toggle theme menu" title="Theme">
       🖥
     </button>
-    <div class="theme-options" data-theme-options hidden>
+    <div id="theme-options" class="theme-options" data-theme-options hidden>
       <button type="button" data-theme-option="light" aria-label="Light theme" title="Light">☀︎</button>
       <button type="button" data-theme-option="dark" aria-label="Dark theme" title="Dark">☾</button>
       <button type="button" data-theme-option="system" aria-label="System theme" title="System">🖥</button>
@@ -60,11 +69,25 @@ function setupThemeSwitcher() {
       updateTriggerLabel(trigger, mode);
       updateOptionVisibility(optionButtons, mode);
       toggleOptions(trigger, options, false);
+      trigger.focus();
     });
   });
 
   document.addEventListener("click", (evt) => {
     if (!switcher.contains(evt.target)) {
+      toggleOptions(trigger, options, false);
+    }
+  });
+
+  switcher.addEventListener("keydown", (evt) => {
+    if (evt.key === "Escape") {
+      toggleOptions(trigger, options, false);
+      trigger.focus();
+    }
+  });
+
+  switcher.addEventListener("focusout", (evt) => {
+    if (!switcher.contains(evt.relatedTarget)) {
       toggleOptions(trigger, options, false);
     }
   });
@@ -80,22 +103,24 @@ function setupThemeSwitcher() {
 function toggleOptions(trigger, options, show) {
   if (!trigger || !options) return;
   trigger.setAttribute("aria-expanded", String(show));
-  if (show) {
-    options.removeAttribute("hidden");
-    requestAnimationFrame(() => options.classList.add("is-open"));
-  } else {
-    options.classList.remove("is-open");
-    setTimeout(() => options.setAttribute("hidden", ""), 160);
-  }
+  options.hidden = !show;
 }
 
 function getSavedMode() {
-  const stored = localStorage.getItem(THEME_KEY);
-  return MODES.includes(stored) ? stored : "system";
+  try {
+    const stored = localStorage.getItem(THEME_KEY);
+    return MODES.includes(stored) ? stored : "system";
+  } catch (_) {
+    return "system";
+  }
 }
 
 function saveMode(mode) {
-  localStorage.setItem(THEME_KEY, mode);
+  try {
+    localStorage.setItem(THEME_KEY, mode);
+  } catch (_) {
+    // The theme still applies for this page when storage is unavailable.
+  }
 }
 
 function applyTheme(mode) {
@@ -127,30 +152,5 @@ function updateOptionVisibility(optionButtons, activeMode) {
       btn.removeAttribute("aria-hidden");
       btn.setAttribute("tabindex", "0");
     }
-  });
-}
-
-function setupCardLinks() {
-  const cards = document.querySelectorAll(".card");
-  cards.forEach((card) => {
-    const link = card.querySelector("a[href]");
-    const href = link?.getAttribute("href");
-    if (!href) return;
-
-    card.setAttribute("role", "link");
-    card.setAttribute("tabindex", "0");
-
-    const go = (evt) => {
-      if (evt.target.closest("a")) return;
-      window.location.href = href;
-    };
-
-    card.addEventListener("click", go);
-    card.addEventListener("keydown", (evt) => {
-      if (evt.key === "Enter" || evt.key === " ") {
-        evt.preventDefault();
-        window.location.href = href;
-      }
-    });
   });
 }

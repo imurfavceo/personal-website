@@ -5,28 +5,36 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Projects · Gleb</title>
   <meta name="description" content="Projects by Gleb Braverman — live, building, and shut down." />
+  <link rel="canonical" href="https://imurfavceo.com/projects/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="Gleb Braverman" />
+  <meta property="og:title" content="Projects · Gleb" />
+  <meta property="og:description" content="Projects by Gleb Braverman — live, building, and shut down." />
+  <meta property="og:url" content="https://imurfavceo.com/projects/" />
+  <meta name="twitter:card" content="summary" />
   <script src="/assets/theme-init.js"></script>
   <link rel="stylesheet" href="/assets/style.css" />
   <link rel="icon" href="/assets/favicon.svg" />
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
   <header>
     <div class="wrap">
-      <button class="menu-btn" type="button" data-menu-button aria-expanded="false" aria-label="Toggle navigation">
+      <button class="menu-btn" type="button" data-menu-button aria-controls="site-nav" aria-expanded="false" aria-label="Toggle navigation">
         Menu
       </button>
-      <nav data-nav>
+      <nav id="site-nav" data-nav aria-label="Main navigation">
         <a href="/">Home</a>
         <a href="/projects/" aria-current="page">Projects</a>
         <a href="/collections/">Collections</a>
         <a href="/about/">About</a>
-        <a href="https://imurfavceo.substack.com/subscribe" target="_blank" rel="noopener">Blog</a>
+        <a href="https://imurfavceo.substack.com/archive" target="_blank" rel="noopener">Blog</a>
       </nav>
     </div>
   </header>
 
   <div class="wrap">
-    <main>
+    <main id="main" tabindex="-1">
       <h1>Projects</h1>
 <p class="kicker">Things I work on now and built in the past.</p>
 
@@ -42,6 +50,18 @@
     </div>
     <div class="project-meta">
       <span class="metric">Raised $1.8M</span>
+      <span class="status status--live"><span class="dot"></span>Live</span>
+    </div>
+  </li>
+  <li>
+    <div class="project-body">
+      <div class="project-id">
+        <span class="project-name">Imladris Labs</span>
+        <a class="project-url" href="https://imladrislabs.dev" target="_blank" rel="noopener">imladrislabs.dev</a>
+      </div>
+      <p class="project-desc">Licensing anonymised operational data to AI labs.</p>
+    </div>
+    <div class="project-meta">
       <span class="status status--live"><span class="dot"></span>Live</span>
     </div>
   </li>
@@ -113,7 +133,6 @@
     <div class="project-body">
       <div class="project-id">
         <span class="project-name">Talk2User</span>
-        <a class="project-url" href="https://landing-git-main-talk2-user.vercel.app/" target="_blank" rel="noopener">link</a>
       </div>
       <p class="project-desc">Turn customer-discovery calls into clear insights.</p>
       <p class="lesson">Reason: customer discovery is hard to productize at scale — the pain wasn't sharp enough.</p>
